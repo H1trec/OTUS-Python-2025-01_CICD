@@ -46,5 +46,6 @@ jobs:
       - name: Run Tests
         env:
           DATABASE_URL: postgresql://python_user:1234567890@localhost:5432/python_db
-        run: |
-          python manage.py test
+          DJANGO_SETTINGS_MODULE: DjangoProject.settings
+        run: python -m pytest store/tests/ -v            
+         
