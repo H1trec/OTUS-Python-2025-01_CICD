@@ -48,18 +48,3 @@ jobs:
           DATABASE_URL: postgresql://python_user:1234567890@localhost:5432/python_db
         run: |
           python manage.py test
-      - name: Deploy (example)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script: |
-            cd /path/to/your/django/project
-            git pull origin main
-            python manage.py migrate
-            # Команды для перезапуска сервиса, если необходимо
-            # Например:
-            # sudo systemctl restart your-django-app
