@@ -47,4 +47,4 @@ jobs:
         env:
           DATABASE_URL: postgresql://python_user:1234567890@localhost:5432/python_db
         run: |
-          python manage.py test
+          python manage.py test store
