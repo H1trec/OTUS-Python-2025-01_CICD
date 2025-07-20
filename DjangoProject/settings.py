@@ -17,7 +17,7 @@ import environ
 BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env(
     DEBUG=(bool, False),
-    # SECRET_KEY=str,
+    SECRET_KEY=str,
     DB_NAME=str,
     DB_USER=str,
     DB_PASSWORD=str,
